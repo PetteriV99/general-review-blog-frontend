@@ -8,3 +8,13 @@ const webpack = require('webpack');const config = {
         extensions: ['.js', '.jsx', '.css']
     },
 };module.exports = config;
+
+module: {
+    rules: [
+      {
+        test: /\.jsx?/,
+        exclude: /node_modules/,
+        use: 'babel-loader'
+      }
+    ]
+  }
