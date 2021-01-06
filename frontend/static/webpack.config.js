@@ -4,17 +4,18 @@ const webpack = require('webpack');const config = {
         path: __dirname + '/dist',
         filename: 'bundle.js',
     },
+    module: {
+        rules: [
+          {
+            test: /\.jsx?/,
+            exclude: /node_modules/,
+            use: 'babel-loader'
+          }
+        ]
+      },
     resolve: {
         extensions: ['.js', '.jsx', '.css']
     },
-};module.exports = config;
+};
 
-module: {
-    rules: [
-      {
-        test: /\.jsx?/,
-        exclude: /node_modules/,
-        use: 'babel-loader'
-      }
-    ]
-  }
+module.exports = config;
